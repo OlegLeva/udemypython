@@ -41,9 +41,3 @@
 #     text = lorem_ipsum_text.read()
 # print(text)
 
-A0 = dict(zip(('a','b','c','d','e'),(1,2,3,4,5)))
-print(A0)
-A1 = range(10)
-print(A1)
-A2 = sorted([i for i in A1 if i in A0])
-print(A2)
