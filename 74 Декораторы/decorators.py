@@ -39,18 +39,39 @@ from functools import wraps
 # hello('Oleg')
 
 
-def prohibit_more_than_2_args(function):
-    @wraps(function)
-    def wrappers(*args):
-        if len(args) > 2:
-            raise ValueError("Function must have less than 3 arguments!")
-        return function(*args) + "Rescue Rangers!"
-    return wrappers
-
-
+# def prohibit_more_than_2_args(function):
+#     @wraps(function)
+#     def wrappers(*args):
+#         if len(args) > 2:
+#             raise ValueError("Function must have less than 3 arguments!")
+#         return function(*args) + " Rescue Rangers!"
+#     return wrappers
+#
+#
 # @prohibit_more_than_2_args
-def rescuer(*args):
+# def rescuer(*args):
+#     list_name = " and ".join(args)
+#     return list_name
+#
+# print(rescuer('Chip', 'Dale'))
+# print(rescuer('Chip', 'Dale', 'Rocky'))
+from time import sleep
 
-    return args
 
-print(rescuer('Chip', 'Dale'))
+def wait(n):
+    def sleep_n(func):
+        @wraps(func)
+        def wrapper():
+            sleep(n)
+            print(f"There was a pause {n} seconds before execution {func.__name__}")
+            return f"{func()} за {n} секунды"
+        return wrapper
+    return sleep_n
+
+
+@wait(3)
+def sleep_time():
+    return 'Всё, выспался'
+
+
+print(sleep_time())

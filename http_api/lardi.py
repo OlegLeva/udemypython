@@ -16,7 +16,7 @@ def get_obl_by_id(id_number):
 
 print('Для выхода из программы используйте цифру 1')
 while True:
-    id = int(input('Введите id области '))
+    id = int(input('Введите id области от 15 до 39: '))
     if id == 1:
         print('Спасибо, до свидания)')
         break

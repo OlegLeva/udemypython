@@ -21,7 +21,7 @@ respons = requests.get(url, headers={"Accept": "application/json"},
                        })
 
 data = respons.json()
-with open('file_json.json', 'w') as f:
-    json.dump(data, f, indent=4)
+# with open('file_json.json', 'w') as f:
+#     json.dump(data, f, indent=4)
 for n, d in enumerate(data['features'], 1):
     print(f'{n}. Place: {d["properties"]["place"]} Magnitude: {d["properties"]["mag"]}')
