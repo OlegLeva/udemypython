@@ -61,159 +61,159 @@
 # print(anagrams('abba', ['aabb', 'abcd', 'bbaa', 'dada']))
 
 # https://www.codewars.com/kata/525f3eda17c7cd9f9e000b39/python
-# def zero(a='0'):
-#     if a != '0':
-#         if a[0] == '+':
-#             return 0 + int(a[1])
-#         if a[0] == '-':
-#             return 0 - int(a[1])
-#         if a[0] == '*':
-#             return 0 * int(a[1])
-#         if a[0] == '/':
-#             return int(0 / int(a[1]))
-#     else:
-#         return '0'
-#
-#
-# def one(a='1'):
-#     if a != '1':
-#         if a[0] == '+':
-#             return 1 + int(a[1])
-#         if a[0] == '-':
-#             return 1 - int(a[1])
-#         if a[0] == '*':
-#             return 1 * int(a[1])
-#         if a[0] == '/':
-#             return int(1 / int(a[1]))
-#     else:
-#         return '1'
-#
-#
-# def two(a='2'):
-#     if a != '2':
-#         if a[0] == '+':
-#             return 2 + int(a[1])
-#         if a[0] == '-':
-#             return 2 - int(a[1])
-#         if a[0] == '*':
-#             return 2 * int(a[1])
-#         if a[0] == '/':
-#             return int(2 / int(a[1]))
-#     else:
-#         return '2'
-#
-#
-# def three(a='3'):
-#     if a != '3':
-#         if a[0] == '+':
-#             return 3 + int(a[1])
-#         if a[0] == '-':
-#             return 3 - int(a[1])
-#         if a[0] == '*':
-#             return 3 * int(a[1])
-#         if a[0] == '/':
-#             return int(3 / int(a[1]))
-#     else:
-#         return '3'
-#
-#
-# def four(a='4'):
-#     if a != '4':
-#         if a[0] == '+':
-#             return 4 + int(a[1])
-#         if a[0] == '-':
-#             return 4 - int(a[1])
-#         if a[0] == '*':
-#             return 4 * int(a[1])
-#         if a[0] == '/':
-#             return int(4 / int(a[1]))
-#     else:
-#         return '4'
-#
-#
-# def five(a='5'):
-#     if a != '5':
-#         if a[0] == '+':
-#             return 5 + int(a[1])
-#         if a[0] == '-':
-#             return 5 - int(a[1])
-#         if a[0] == '*':
-#             return 5 * int(a[1])
-#         if a[0] == '/':
-#             return int(5 / int(a[1]))
-#     else:
-#         return '5'
-#
-#
-# def six(a='6'):
-#     if a != '6':
-#         if a[0] == '+':
-#             return 6 + int(a[1])
-#         if a[0] == '-':
-#             return 6 - int(a[1])
-#         if a[0] == '*':
-#             return 6 * int(a[1])
-#         if a[0] == '/':
-#             return int(6 / int(a[1]))
-#     else:
-#         return '6'
-#
-#
-# def seven(a='7'):
-#     if a != '7':
-#         if a[0] == '+':
-#             return 7 + int(a[1])
-#         if a[0] == '-':
-#             return 7 - int(a[1])
-#         if a[0] == '*':
-#             return 7 * int(a[1])
-#         if a[0] == '/':
-#             return int(7 / int(a[1]))
-#     else:
-#         return '7'
-#
-#
-# def eight(a='8'):
-#     if a != '8':
-#         if a[0] == '+':
-#             return 8 + int(a[1])
-#         if a[0] == '-':
-#             return 8 - int(a[1])
-#         if a[0] == '*':
-#             return 8 * int(a[1])
-#         if a[0] == '/':
-#             return int(8 / int(a[1]))
-#     else:
-#         return '8'
-#
-#
-# def nine(a='9'):
-#     if a != '9':
-#         if a[0] == '+':
-#             return 9 + int(a[1])
-#         if a[0] == '-':
-#             return 9 - int(a[1])
-#         if a[0] == '*':
-#             return 9 * int(a[1])
-#         if a[0] == '/':
-#             return int(9 / int(a[1]))
-#     else:
-#         return '9'
-#
-#
-# def plus(a):
-#     return '+' + a
-#
-# def minus(a):
-#     return '-' + a
-#
-# def times(a):
-#     return '*' + a
-#
-# def divided_by(a):
-#     return '/' + a
-#
-# print(eight(divided_by(three())))
+def zero(a='0'):
+    if a != '0':
+        if a[0] == '+':
+            return 0 + int(a[1])
+        if a[0] == '-':
+            return 0 - int(a[1])
+        if a[0] == '*':
+            return 0 * int(a[1])
+        if a[0] == '/':
+            return int(0 / int(a[1]))
+    else:
+        return '0'
+
+
+def one(a='1'):
+    if a != '1':
+        if a[0] == '+':
+            return 1 + int(a[1])
+        if a[0] == '-':
+            return 1 - int(a[1])
+        if a[0] == '*':
+            return 1 * int(a[1])
+        if a[0] == '/':
+            return int(1 / int(a[1]))
+    else:
+        return '1'
+
+
+def two(a='2'):
+    if a != '2':
+        if a[0] == '+':
+            return 2 + int(a[1])
+        if a[0] == '-':
+            return 2 - int(a[1])
+        if a[0] == '*':
+            return 2 * int(a[1])
+        if a[0] == '/':
+            return int(2 / int(a[1]))
+    else:
+        return '2'
+
+
+def three(a='3'):
+    if a != '3':
+        if a[0] == '+':
+            return 3 + int(a[1])
+        if a[0] == '-':
+            return 3 - int(a[1])
+        if a[0] == '*':
+            return 3 * int(a[1])
+        if a[0] == '/':
+            return int(3 / int(a[1]))
+    else:
+        return '3'
+
+
+def four(a='4'):
+    if a != '4':
+        if a[0] == '+':
+            return 4 + int(a[1])
+        if a[0] == '-':
+            return 4 - int(a[1])
+        if a[0] == '*':
+            return 4 * int(a[1])
+        if a[0] == '/':
+            return int(4 / int(a[1]))
+    else:
+        return '4'
+
+
+def five(a='5'):
+    if a != '5':
+        if a[0] == '+':
+            return 5 + int(a[1])
+        if a[0] == '-':
+            return 5 - int(a[1])
+        if a[0] == '*':
+            return 5 * int(a[1])
+        if a[0] == '/':
+            return int(5 / int(a[1]))
+    else:
+        return '5'
+
+
+def six(a='6'):
+    if a != '6':
+        if a[0] == '+':
+            return 6 + int(a[1])
+        if a[0] == '-':
+            return 6 - int(a[1])
+        if a[0] == '*':
+            return 6 * int(a[1])
+        if a[0] == '/':
+            return int(6 / int(a[1]))
+    else:
+        return '6'
+
+
+def seven(a='7'):
+    if a != '7':
+        if a[0] == '+':
+            return 7 + int(a[1])
+        if a[0] == '-':
+            return 7 - int(a[1])
+        if a[0] == '*':
+            return 7 * int(a[1])
+        if a[0] == '/':
+            return int(7 / int(a[1]))
+    else:
+        return '7'
+
+
+def eight(a='8'):
+    if a != '8':
+        if a[0] == '+':
+            return 8 + int(a[1])
+        if a[0] == '-':
+            return 8 - int(a[1])
+        if a[0] == '*':
+            return 8 * int(a[1])
+        if a[0] == '/':
+            return int(8 / int(a[1]))
+    else:
+        return '8'
+
+
+def nine(a='9'):
+    if a != '9':
+        if a[0] == '+':
+            return 9 + int(a[1])
+        if a[0] == '-':
+            return 9 - int(a[1])
+        if a[0] == '*':
+            return 9 * int(a[1])
+        if a[0] == '/':
+            return int(9 / int(a[1]))
+    else:
+        return '9'
+
+
+def plus(a):
+    return '+' + a
+
+def minus(a):
+    return '-' + a
+
+def times(a):
+    return '*' + a
+
+def divided_by(a):
+    return '/' + a
+
+print(eight(divided_by(three())))
 
 
 # https://www.codetd.com/en/article/7183730
