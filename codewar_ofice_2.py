@@ -21,37 +21,68 @@
 
 # https://www.codewars.com/kata/52b7ed099cdc285c300001cd/python
 
+#
+# def alphabet_position(text):
+#     alphabet = 'abcdefghijklmnopqrstuvwxyz'
+#     my_dict = {}
+#     my_string = ''
+#     for i, b in enumerate(alphabet, 1):
+#         my_dict[b] = i
+#
+#     while text:
+#         if text[0].isalpha():
+#             my_string += str(my_dict[text.lower()[0]]) + ' '
+#             text = text[1:]
+#         else:
+#             text = text[1:]
+#     return my_string[:-1]
+#
+# print(alphabet_position("The sunset sets at twelve o' clock."))
+#
+# def make_readable(seconds):
+#     a = seconds // 60
+#     ss = seconds % 60
+#     mm = a % 60
+#     hh = a // 60
+#     if hh > 99:
+#         hh = 99
+#     if ss < 10:
+#         ss = "0" + str(ss)
+#     if mm < 10:
+#         mm = "0" + str(mm)
+#     if hh < 10:
+#         hh = "0" + str(hh)
+#     return f'{str(hh)}:{str(mm)}:{str(ss)}'
+#
+# print(make_readable(86399))
+# print(make_readable(0))
+#
+#
+# def make_readable(seconds):
+#     a = seconds // 60
+#     ss = seconds % 60
+#     mm = a % 60
+#     hh = a // 60
+#     if hh > 99:
+#         hh = 99
+#     if ss < 10:
+#         ss = "0" + str(ss)
+#     if mm < 10:
+#         mm = "0" + str(mm)
+#     if hh < 10:
+#         hh = "0" + str(hh)
+#     return str(hh)+':'+ str(mm)+':'+ str(ss)
+# print(make_readable(86399))
 
-def sum_intervals(l):
-    l.sort(key=lambda i: i[0])
-    print(l, 'sort')
-    cand = l.pop(0)
-    print(l, '1 pop')
-    print(cand, 'cant 1 pop')
-    res = 0
+# ["NORTH", "SOUTH", "SOUTH", "EAST", "WEST", "NORTH", "WEST"]
+# https://www.codewars.com/kata/550f22f4d758534c1100025a/python
 
-    while l:
-        interval = l.pop(0)
-        print(l, '2 pop')
-        l[0][0], l[0][1] = cand
-        print(cand, 'cand')
-        print(interval, ' 1 interval')
-        l[1][0], l[1][1] = interval
-        print(interval, '2 interval')
-        if l[0][0] <= l[1][0] <= l[0][1] or l[1][0] <= l[0][1] <= l[1][1]:
-            cand = min(l[0][0], l[1][0]), max(l[0][1], l[1][1])
-        if l[0][1] < l[1][0]:
-            print(l[0])
-            res += cand[1] - cand[0]
-            cand = interval
-
-    res += cand[1] - cand[0]
-
-    return res
+def dirReduc(arr):
+    direction_of_travel = []
+    if "NORTH" and "SOUTH" in arr:
+        x = arr.count("NORTH")
+        y = arr.count("SOUTH")
+        print(x)
 
 
-print(sum_intervals([
-    [1, 2],
-    [6, 10],
-    [11, 15]
-]))
+dirReduc(["NORTH", "SOUTH", "SOUTH", "EAST", "WEST", "NORTH", "WEST"])
