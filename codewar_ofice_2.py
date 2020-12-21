@@ -183,18 +183,15 @@
 
 def to_jaden_case(string):
     string_list = list(string)
-    i = 0
-    while i <= len(string):
-        for w in string_list:
-            if w == "'":
-                i = string_list.index(w)
-                string_list.pop(string_list.index(w))
-                string = ''.join(string_list)
-                string_list = list(string.title())
-                string_list.insert(i, "'")
+    for w in string_list:
+        if w == "'":
+            i = string_list.index(w)
+            string_list.pop(string_list.index(w))
+            string = ''.join(string_list)
+            string_list = list(string.title())
+            string_list.insert(i, "'")
 
-                return (''.join(string_list))
-        i += 1
+            return (''.join(string_list))
 
     string_list = list(string.title())
     return (''.join(string_list))
@@ -203,3 +200,5 @@ def to_jaden_case(string):
 print(to_jaden_case("How can mirrors be real if our eyes aren't real"))
 print(to_jaden_case('If Newborn Babies Could Speak They Would Be The Most Intelligent Beings On Planet Earth.'))
 print(to_jaden_case("Young Jaden: Here's The Deal For Every Time Out You Give Me, You'Ll Give Me 15 Dollars For Therapy When I Get Older."))
+
+# https://www.codewars.com/kata/5390bac347d09b7da40006f6/train/python
