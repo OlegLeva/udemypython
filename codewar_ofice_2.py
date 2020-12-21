@@ -181,24 +181,61 @@
 #
 # print(is_valid_IP('129.d30.67.89'))
 
-def to_jaden_case(string):
-    string_list = list(string)
-    for w in string_list:
-        if w == "'":
-            i = string_list.index(w)
-            string_list.pop(string_list.index(w))
-            string = ''.join(string_list)
-            string_list = list(string.title())
-            string_list.insert(i, "'")
-
-            return (''.join(string_list))
-
-    string_list = list(string.title())
-    return (''.join(string_list))
-
-
-print(to_jaden_case("How can mirrors be real if our eyes aren't real"))
-print(to_jaden_case('If Newborn Babies Could Speak They Would Be The Most Intelligent Beings On Planet Earth.'))
-print(to_jaden_case("Young Jaden: Here's The Deal For Every Time Out You Give Me, You'Ll Give Me 15 Dollars For Therapy When I Get Older."))
+# def to_jaden_case(string):
+#     return ' '.join(i.capitalize() for i in string.split())
+#
+#
+# print(to_jaden_case("How can mirrors be real if our eyes aren't real"))
+# print(to_jaden_case('If Newborn Babies Could Speak They Would Be The Most Intelligent Beings On Planet Earth.'))
+# print(to_jaden_case("People Tell Me To Smile I Tell Them The Lack Of Emotion In My Face Doesn't Mean I'm Unhappy"))
 
 # https://www.codewars.com/kata/5390bac347d09b7da40006f6/train/python
+
+# def product(numbers):
+#     if numbers == [0]:
+#         return [0]
+#     if numbers == [None] or numbers == [] :
+#         return None
+#     else:
+#         res = 1
+#         for n in numbers:
+#             res *= n
+#         return res
+#
+# print(product([-2, 0, 7, 8]))
+# print(product([None]))
+# print(product([0]))
+# print(product([]))
+
+
+def rgb(r, g, b):
+    result = ''
+    if r > 255:
+        r = 255
+    elif r < 0:
+        r = 0
+    value_r = hex(r)[2:]
+    if len(value_r) == 1:
+        value_r = '0' + value_r
+    result += value_r
+    if g > 255:
+        g = 255
+    elif g < 0:
+        g = 0
+    value_g = hex(g)[2:]
+    if len(value_g) == 1:
+        value_g = '0' + value_g
+    result += value_g
+    if b > 255:
+        b = 255
+    elif b < 0:
+        b = 0
+    value_b = hex(b)[2:]
+    if len(value_b) == 1:
+        value_b = '0' + value_b
+    result += value_b
+    return result.upper()
+
+print(rgb(1, 2, 3))
+
+print(hex(1))
