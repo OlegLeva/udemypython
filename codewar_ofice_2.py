@@ -207,35 +207,23 @@
 # print(product([0]))
 # print(product([]))
 
+#
 
-def rgb(r, g, b):
-    result = ''
-    if r > 255:
-        r = 255
-    elif r < 0:
-        r = 0
-    value_r = hex(r)[2:]
-    if len(value_r) == 1:
-        value_r = '0' + value_r
-    result += value_r
-    if g > 255:
-        g = 255
-    elif g < 0:
-        g = 0
-    value_g = hex(g)[2:]
-    if len(value_g) == 1:
-        value_g = '0' + value_g
-    result += value_g
-    if b > 255:
-        b = 255
-    elif b < 0:
-        b = 0
-    value_b = hex(b)[2:]
-    if len(value_b) == 1:
-        value_b = '0' + value_b
-    result += value_b
-    return result.upper()
+favorite_languages = {
+'jen': 'python',
+'sarah': 'c',
+'edward': 'ruby',
+'phil': 'python',
+}
 
-print(rgb(1, 2, 3))
+def get_key(d, value):
+    name_list = []
+    for k, v in d.items():
+        if v == value:
+            name_list.append(k)
+    return name_list
 
-print(hex(1))
+print(get_key(favorite_languages, 'python'))
+# print(favorite_languages.values())
+# revers_dict = {v: k for k, v in favorite_languages.items()}
+# print(revers_dict)
