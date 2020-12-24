@@ -209,21 +209,39 @@
 
 #
 
-favorite_languages = {
-'jen': 'python',
-'sarah': 'c',
-'edward': 'ruby',
-'phil': 'python',
-}
-
-def get_key(d, value):
-    name_list = []
-    for k, v in d.items():
-        if v == value:
-            name_list.append(k)
-    return name_list
-
-print(get_key(favorite_languages, 'python'))
+# favorite_languages = {
+# 'jen': 'python',
+# 'sarah': 'c',
+# 'edward': 'ruby',
+# 'phil': 'python',
+# }
+#
+# def get_key(d, value):
+#     name_list = []
+#     for k, v in d.items():
+#         if v == value:
+#             name_list.append(k)
+#     return name_list
+#
+# print(get_key(favorite_languages, 'python'))
 # print(favorite_languages.values())
 # revers_dict = {v: k for k, v in favorite_languages.items()}
 # print(revers_dict)
+
+# def duplicate_count(text):
+#     x = set()
+#     for t in text:
+#         if text.lower().count(t) > 1:
+#             x.add(t)
+#     print(x)
+#     return len(x)
+#
+# print(duplicate_count("aA11"))
+
+# def abbrev_name(name):
+#     lst = name.split()
+#     return (lst[0][0]).upper() + "." + (lst[1][0]).upper()
+#
+# print(abbrev_name("Sam Harris"))
+
+# https://www.codewars.com/dashboard
