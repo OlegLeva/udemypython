@@ -245,3 +245,21 @@
 # print(abbrev_name("Sam Harris"))
 
 # https://www.codewars.com/dashboard
+
+def to_camel_case(text):
+    if text == '':
+        return ''
+    text_list = text.replace('-', ' ').replace('_', ' ').replace('/', ' ')
+    text_list = text_list.split(' ')
+    first_word = text_list[0]
+    if text_list[0] == first_word.title():
+        res = ''.join([w.title() for w in text_list])
+        return res
+    elif text_list[0] != first_word.title():
+        res = text_list[0]
+        res_2 = ''.join([w.title() for w in text_list[1:]])
+        res += res_2
+        return res
+
+
+print(to_camel_case("The-stealth/warrior_uuu_kk"))
