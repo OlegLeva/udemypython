@@ -207,44 +207,110 @@
 # print(product([0]))
 # print(product([]))
 
-#
 
-# favorite_languages = {
-# 'jen': 'python',
-# 'sarah': 'c',
-# 'edward': 'ruby',
-# 'phil': 'python',
-# }
+# def rgb(r, g, b):
+#     result = ''
+#     if r > 255:
+#         r = 255
+#     elif r < 0:
+#         r = 0
+#     value_r = hex(r)[2:]
+#     if len(value_r) == 1:
+#         value_r = '0' + value_r
+#     result += value_r
+#     if g > 255:
+#         g = 255
+#     elif g < 0:
+#         g = 0
+#     value_g = hex(g)[2:]
+#     if len(value_g) == 1:
+#         value_g = '0' + value_g
+#     result += value_g
+#     if b > 255:
+#         b = 255
+#     elif b < 0:
+#         b = 0
+#     value_b = hex(b)[2:]
+#     if len(value_b) == 1:
+#         value_b = '0' + value_b
+#     result += value_b
+#     return result.upper()
 #
-# def get_key(d, value):
-#     name_list = []
-#     for k, v in d.items():
-#         if v == value:
-#             name_list.append(k)
-#     return name_list
+# print(rgb(1, 2, 3))
 #
-# print(get_key(favorite_languages, 'python'))
-# print(favorite_languages.values())
-# revers_dict = {v: k for k, v in favorite_languages.items()}
-# print(revers_dict)
+# print(hex(1))
 
-# def duplicate_count(text):
-#     x = set()
-#     for t in text:
-#         if text.lower().count(t) > 1:
-#             x.add(t)
-#     print(x)
-#     return len(x)
+# def solution(a):
+#     i = 0
+#     while True:
+#         a.sort(reverse=True)
+#         if len(a) == 1:
+#             return a[i]
+#         if a[i] > a[i+1]:
+#             a[i] = a[i] - a[i+1]
+#             a.sort(reverse=True)
+#             print(a)
+#         if a[i] == a[i]:
+#             i += 1
+#         if a[i] - a[i+1] <= 0:
+#             break
+#     return sum(a)
 #
-# print(duplicate_count("aA11"))
-
-# def abbrev_name(name):
-#     lst = name.split()
-#     return (lst[0][0]).upper() + "." + (lst[1][0]).upper()
 #
-# print(abbrev_name("Sam Harris"))
+#
+# print(solution([6, 9, 21, 55, 66, 100]))
+# print(solution([2735262, 45155022, 16788750, 12893982, 28611582, 16911072, 9058488, 35697822, 42201312,
+#                 53302200, 49878072, 9238752, 9329550, 11540448, 33939582, 10744800, 49667838, 33766200,
+#                 35697822, 3091128, 1385502, 27977550, 30227742, 24913950, 2175822, 15238968, 17280702,
+#                 19847022, 9883662, 13434552, 18928608, 10261950, 3038958, 996558, 25212318, 6117432, 14548992,
+#                 5612382, 34637550, 21472062, 16064142, 44755422, 13434552, 12469518, 20247288, 44357598, 8880000,
+#                 3524472, 31888302, 13543998, 36233952, 2541678, 54615552, 881118, 15944928, 43764192, 39722238]))
+# print(solution([1, 21, 55]))
+#
+# def solution(a):
+#     len_a = len(a)
+#     a = set(a)
+#     while len(a) != 1:
+#         b = max(a)
+#         a.remove(b)
+#         a.add(b - max(a))
+#     return max(a) * len_a
+#
+#
+# print(solution([1, 21, 55]))
+# print(solution([6, 9, 21]))
+#
+# print(solution([2735262, 45155022, 16788750, 12893982, 28611582, 16911072, 9058488, 35697822, 42201312,
+#                 53302200, 49878072, 9238752, 9329550, 11540448, 33939582, 10744800, 49667838, 33766200,
+#                 35697822, 3091128, 1385502, 27977550, 30227742, 24913950, 2175822, 15238968, 17280702,
+#                 19847022, 9883662, 13434552, 18928608, 10261950, 3038958, 996558, 25212318, 6117432, 14548992,
+#                 5612382, 34637550, 21472062, 16064142, 44755422, 13434552, 12469518, 20247288, 44357598, 8880000,
+#                 3524472, 31888302, 13543998, 36233952, 2541678, 54615552, 881118, 15944928, 43764192, 39722238]))
 
-# https://www.codewars.com/dashboard
+#
+# def xo(s):
+#     if s.lower().count('x') == s.lower().count('o'): return True
+#     else: return False
+#
+# print(xo('xo'), 'True expected')
+# print(xo('xo0'), 'True expected')
+# print(xo('xxxoo'), 'False expected')
+
+
+# def create_phone_number(n):
+#     return '({}{}{}) {}{}{}-{}{}{}{}'.format(*n)
+# print(create_phone_number([1, 2, 3, 4, 5, 6, 7, 8, 9, 0]))
+#
+# def count_by(x, n):
+#     a = x
+#     res = [x]
+#     for x in range(x, x*n, x):
+#         x += a
+#         res.append(x)
+#     return res
+#
+# print(count_by(2, 5))
+
 
 def to_camel_case(text):
     if text == '':
