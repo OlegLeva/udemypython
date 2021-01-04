@@ -51,19 +51,45 @@
 
 # print ((2001-1) // 100 + 1)
 
+#
+# def is_square(n):
+#    if n == 0:
+#       return True
+#    if n < 0:
+#       return False
+#    x = n ** 0.5
+#    if x % int(x) != 0:
+#       return False
+#    return True
+#
+# import math
+# def is_square1(n):
+#     return n > -1 and math.sqrt(n) % 1 == 0
+#
+# print(is_square(13))
 
-def is_square(n):
-   if n == 0:
-      return True
-   if n < 0:
-      return False
-   x = n ** 0.5
-   if x % int(x) != 0:
-      return False
-   return True
 
-import math
-def is_square1(n):
-    return n > -1 and math.sqrt(n) % 1 == 0
+def increment_string(strng):
+   str_part = ''
+   int_part = ''
+   for s in strng:
+      if s.isdigit():
+         int_part += s
+      if s == '0':
+         str_part += s
+      if s.isalpha():
+         str_part += s
+   if int_part == '':
+      return str_part + '1'
+   res = str_part + str(int(int_part) + 1)
+   if res[-1] == '0':
+      res[-1] = '1'
 
-print(is_square(13))
+   return res
+
+# https://www.codewars.com/kata/54a91a4883a7de5d7800009c/train/python
+
+
+
+
+print(increment_string("foobar00"))
