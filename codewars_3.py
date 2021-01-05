@@ -68,28 +68,21 @@
 #
 # print(is_square(13))
 
+def byn_search(a, value):
+   mid = len(a) // 2
+   low = 0
+   high = len(a) - 1
 
-def increment_string(strng):
-   str_part = ''
-   int_part = ''
-   for s in strng:
-      if s.isdigit():
-         int_part += s
-      if s == '0':
-         str_part += s
-      if s.isalpha():
-         str_part += s
-   if int_part == '':
-      return str_part + '1'
-   res = str_part + str(int(int_part) + 1)
-   if res[-1] == '0':
-      res[-1] = '1'
+   while a[mid] != value and low <= high:
+      if value > a[mid]:
+         low = mid + 1
+      else:
+         high = mid - 1
+      mid = (low + high) // 2
 
-   return res
+   if low > high:
+      print("No value")
+   else:
+      print("ID =", mid)
 
-# https://www.codewars.com/kata/54a91a4883a7de5d7800009c/train/python
-
-
-
-
-print(increment_string("foobar00"))
+byn_search([6, 17, 21, 27, 32, 35, 35, 36, 37, 48], 27)
