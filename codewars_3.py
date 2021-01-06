@@ -67,22 +67,61 @@
 #     return n > -1 and math.sqrt(n) % 1 == 0
 #
 # print(is_square(13))
+#
+# def byn_search(a, value):
+#    mid = len(a) // 2
+#    low = 0
+#    high = len(a) - 1
+#
+#    while a[mid] != value and low <= high:
+#       if value > a[mid]:
+#          low = mid + 1
+#       else:
+#          high = mid - 1
+#       mid = (low + high) // 2
+#
+#    if low > high:
+#       print("No value")
+#    else:
+#       print("ID =", mid)
+#
+# byn_search(['a', 'b', 'c', 'd', 'e', 'i', 'k'], 'a')
+#
+#
+# n = int(input())
+#
+# factorial = 1
+# while n > 1:
+#     factorial *= n
+#     n -= 1
+#
+# print(factorial)
 
-def byn_search(a, value):
-   mid = len(a) // 2
-   low = 0
-   high = len(a) - 1
 
-   while a[mid] != value and low <= high:
-      if value > a[mid]:
-         low = mid + 1
-      else:
-         high = mid - 1
-      mid = (low + high) // 2
+def find_smallest(arr):
+   smallest = arr[0]
+   smallest_index = 0
+   for i in range(1, len(arr)):
+      if arr[i] < smallest:
+         smallest = arr[i]
+         smallest_index = i
+   return smallest_index
 
-   if low > high:
-      print("No value")
-   else:
-      print("ID =", mid)
+print(find_smallest([5, 1, 4,-4, 7, 2, 0, 6]))
 
-byn_search([6, 17, 21, 27, 32, 35, 35, 36, 37, 48], 27)
+def selection_sort(arr):
+   new_sort = []
+   for _ in range(len(arr)):
+      numb = find_smallest(arr)
+      new_sort.append((arr.pop(numb))*2)
+   new_sort.reverse()
+
+   return new_sort
+
+print(selection_sort([5, 1, 4,-4, 7, 2, 0, 6]))
+
+x = (selection_sort([5, 1, 4,-4, 7, 2, 0, 6])).reverse()
+print(x)
+l = [5, 1, 4, -4, 7, 2, 0, 6]
+l.sort(reverse=True)
+print(l)
