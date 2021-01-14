@@ -76,30 +76,29 @@
 
 # ["NORTH", "SOUTH", "SOUTH", "EAST", "WEST", "NORTH", "WEST"]
 # https://www.codewars.com/kata/550f22f4d758534c1100025a/python
-# from itertools import repeat
-#
-#
-# def dirReduc(arr):
-#     direction_of_travel = []
-#     n = arr.count("NORTH")
-#     s = arr.count("SOUTH")
-#     w = arr.count("WEST")
-#     e = arr.count("EAST")
-#     diff_nord_south = n - s
-#     if diff_nord_south > 0:
-#         direction_of_travel.extend(repeat("NORTH", diff_nord_south))
-#     if diff_nord_south < 0:
-#         direction_of_travel.extend(repeat("SOUTH", -diff_nord_south))
-#     diff_west_east = w - e
-#     if diff_west_east > 0:
-#         direction_of_travel.extend(repeat("WEST", diff_west_east))
-#     if diff_west_east < 0:
-#         direction_of_travel.extend(repeat("EAST", -diff_west_east))
-#
-#     return direction_of_travel
-#
-#
-# print(dirReduc(['NORTH', 'NORTH', 'WEST', 'SOUTH', 'EAST']))
+from itertools import repeat
+
+def dirReduc(arr):
+    direction_of_travel = []
+    n = arr.count("NORTH")
+    s = arr.count("SOUTH")
+    w = arr.count("WEST")
+    e = arr.count("EAST")
+    diff_nord_south = n - s
+    if diff_nord_south > 0:
+        direction_of_travel.extend(repeat("NORTH", diff_nord_south))
+    if diff_nord_south < 0:
+        direction_of_travel.extend(repeat("SOUTH", -diff_nord_south))
+    diff_west_east = w - e
+    if diff_west_east > 0:
+        direction_of_travel.extend(repeat("WEST", diff_west_east))
+    if diff_west_east < 0:
+        direction_of_travel.extend(repeat("EAST", -diff_west_east))
+
+    return direction_of_travel
+
+
+print(dirReduc(['NORTH', 'NORTH', 'WEST', 'SOUTH', 'EAST']))
 
 #
 # def dirReduc_1(arr):

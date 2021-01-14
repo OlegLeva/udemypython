@@ -149,22 +149,22 @@
 #
 # print(binary_search(['a', 'b', 'c', 'd', 'e', 'i', 'k'], 'c'))
 
-regex = '^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[^\W_]{6,}$' # Валидация пароля
-
-def proper_fractions(n):
-    numb_list = list(range(1, n + 1))
-    res = [1]
-    print(numb_list)
-    for x in numb_list:
-        for y in numb_list:
-            if n % x == 0 and y % x == 0:
-                continue
-
-        res.append(x)
-
-    return res
-
-print(proper_fractions(25))
+#regex = '^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[^\W_]{6,}$' # Валидация пароля
+#
+# def proper_fractions(n):
+#     numb_list = list(range(1, n + 1))
+#     res = [1]
+#     print(numb_list)
+#     for x in numb_list:
+#         for y in numb_list:
+#             if n % x == 0 and y % x == 0:
+#                 continue
+#
+#         res.append(x)
+#
+#     return res
+#
+# print(proper_fractions(25))
 
 states_needed = ["mt", "wa", "or", "id", "nv", "ut", "са", "az"]
 states_needed = set(states_needed)
@@ -183,9 +183,24 @@ while states_needed:
     states_covered = set()
     for station, states in stations.items():
         covered = states_needed & states
+        print(covered)
         if len(covered) > len(states_covered):
             best_station = station
             states_covered = covered
     states_needed -= states_covered
     final_stations.add(best_station)
 print(final_stations)
+
+# def is_valid_walk(walk):
+#     w = walk.count('w')
+#     e = walk.count('e')
+#     n = walk.count('n')
+#     s = walk.count('s')
+#     if len(walk) != 10:
+#         return False
+#     if w - e == 0 and n - s == 0:
+#         return True
+#     else:
+#         return False
+#
+# print(is_valid_walk(['s', 'e', 'w', 'e', 'n', 's', 'e', 'w', 'n', 's']))
