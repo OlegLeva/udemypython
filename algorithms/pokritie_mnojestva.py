@@ -15,15 +15,12 @@ while states_needed:
     states_covered = set()
     for station, states in stations.items():
         covered = states_needed & states
-        print(covered)
+        print(f'{covered} covered 1')
         if len(covered) > len(states_covered):
             best_station = station
             states_covered = covered
+            print(f'{covered} covered 2')
     states_needed -= states_covered
     final_stations.add(best_station)
 print(final_stations)
 
-ovoshi = {'tomat', 'ogurec', 'perec'}
-fructy = {'SLIVA', 'tomat'}
-res = ovoshi&fructy
-print(res)
