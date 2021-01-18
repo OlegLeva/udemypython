@@ -68,6 +68,13 @@
 # print(nb_year(1500000, 0.25, 1000, 2000000))
 #https://www.codewars.com/kata/578553c3a1b8d5c40300037c/train/python
 def binary_array_to_number(arr):
-  pass
+    arr1 = arr[::-1]
+    i = 0
+    result = []
+    for x in arr1:
+        if x == 1:
+            result.append(2**i)
+        i += 1
+    return sum(result)
 
-print(2**0)
+
