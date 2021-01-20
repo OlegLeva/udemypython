@@ -19,9 +19,20 @@
 #     return res
 # print(solution('abcde'))
 
-
-def narcissistic(value):
-    return value == sum([int(i) ** len(str(value)) for i in str(value)])
-
-
-print(narcissistic(153))
+#
+# def narcissistic(value):
+#     return value == sum([int(i) ** len(str(value)) for i in str(value)])
+#
+#
+# print(narcissistic(153))
+#
+# def capitals(word):
+#     res = []
+#     i =0
+#     while i < len(word):
+#         if word[i] == word[i].title():
+#             res.append(i)
+#         i += 1
+#     return res
+#
+# print(capitals('CodCEWaWRs'))
