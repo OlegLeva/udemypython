@@ -57,13 +57,49 @@
 # print(iq_test("2 4  8 10 7"))
 
 # https://www.codewars.com/kata/5842df8ccbd22792a4000245/train/python
+#
+# def expanded_form(num):
+#     list_num = list(str(num))
+#
+#     result = []
+#     while list_num:
+#         l = len(list_num)
+#         if list_num[0] == '0':
+#             list_num.pop(0)
+#         else:
+#             x = list_num.pop(0)
+#             result.append(x+'0'*(l-1))
+#     return ' + '.join(result)
+#
+# print(expanded_form(70304))
 
-def expanded_form(num):
-    pass
-print(70304%100)
-num = 70304
-print(str(num)[1:])
-l = len(str(num))
-x = str(num)[0]
-y = '0'*(l-1)
-print(y)
+
+def sum_pairs(ints, s):
+    i = 1
+    res = []
+    while ints:
+        while i < len(ints):
+            x = ints[0] + ints[i]
+            if s == x:
+                res.append([i, ints[0], ints[i]])
+            i += 1
+        ints = ints[1:]
+        i = 1
+    if not res:
+        return None
+    res.sort(key=lambda x: x[0])
+    return res[0][1:]
+
+    # key_list = [k for k in res]
+    # if not key_list:
+    #     return None
+    # return res[min(key_list)]
+
+
+
+print(sum_pairs([10, 5, 2, 3, 7, 5], 10))
+
+
+l = [[4, 5, 5], [1, 3, 7], [1, 2, 4]]
+l.sort(key=lambda x: x[0])
+print(l)
