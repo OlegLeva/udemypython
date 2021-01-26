@@ -36,3 +36,34 @@
 #     return res
 #
 # print(capitals('CodCEWaWRs'))
+#
+# def iq_test(numbers):
+#     list_numbers = numbers.split()
+#     even_list = []
+#     odd_list = []
+#     for numb in list_numbers:
+#         if int(numb) % 2 == 0:
+#             even_list.append(numb)
+#         else:
+#             odd_list.append(numb)
+#     if len(even_list) == 1:
+#         return list_numbers.index(even_list[0]) + 1
+#     else:
+#         return list_numbers.index(odd_list[0]) + 1
+#
+#
+#
+#
+# print(iq_test("2 4  8 10 7"))
+
+# https://www.codewars.com/kata/5842df8ccbd22792a4000245/train/python
+
+def expanded_form(num):
+    pass
+print(70304%100)
+num = 70304
+print(str(num)[1:])
+l = len(str(num))
+x = str(num)[0]
+y = '0'*(l-1)
+print(y)
