@@ -72,34 +72,41 @@
 #     return ' + '.join(result)
 #
 # print(expanded_form(70304))
+#
+#
+# def sum_pairs(lst, s):
+#     cache = set()
+#
+#     for i in lst:
+#         print(cache)
+#         if s - i in cache:
+#             return [s - i, i]
+#         cache.add(i)
+#
+#
+#
+#
+# print(sum_pairs([10, 5, 2, 3, 7, 5], 10))
 
+# def solve(st,k):
+#     for l in sorted(st)[:k]:
+#         st=st.replace(l,'',1)
+#     return st
+#
+# def maskify(cc):
+#     if len(cc) <= 4:
+#         return cc
+#     else:
+#         for l in cc[:len(cc)-4]:
+#             cc = cc.replace(l, '#', 1)
+#     return cc
+#
+# print(maskify('ib'))
+#
+#
+# print(solve('abracadabra', 6))
 
-def sum_pairs(ints, s):
-    i = 1
-    res = []
-    while ints:
-        while i < len(ints):
-            x = ints[0] + ints[i]
-            if s == x:
-                res.append([i, ints[0], ints[i]])
-            i += 1
-        ints = ints[1:]
-        i = 1
-    if not res:
-        return None
-    res.sort(key=lambda x: x[0])
-    return res[0][1:]
+def maskify(cc):
+    return "#"*(len(cc)-4) + cc[-4:]
 
-    # key_list = [k for k in res]
-    # if not key_list:
-    #     return None
-    # return res[min(key_list)]
-
-
-
-print(sum_pairs([10, 5, 2, 3, 7, 5], 10))
-
-
-l = [[4, 5, 5], [1, 3, 7], [1, 2, 4]]
-l.sort(key=lambda x: x[0])
-print(l)
+print(maskify('uulib'))
