@@ -17,12 +17,32 @@ class User:
     def reset_login_attempts(self):
         self.login_attempts = 0
 
+
+class Privileges:
+    def __init__(self, privileges=''):
+        self.privileges = privileges
+
+    def show_privileges(self):
+        self.privileges = [
+            'Allowed advertising messages',
+            'Allowed to delete users',
+            'Allowed to ban users'
+        ]
+        for priveleg in self.privileges:
+            print(priveleg)
+
+
+class Admin(User):
+    def __init__(self, first_name, last_name, phone, login_attempts):
+        self.privileges = Privileges()
+        super().__init__(first_name, last_name, phone, login_attempts)
+
+
 oleg_L = User('oleh', 'levytskyi', '+380509001818', 0)
 
-print(oleg_L.describe_user())
-print(oleg_L.greet_user())
-oleg_L.increment_login_attempts()
-oleg_L.increment_login_attempts()
-print(oleg_L.login_attempts)
-oleg_L.reset_login_attempts()
-print(oleg_L.login_attempts)
+olga_L = Admin('olha', 'levytskayi', '+380507093655', 0)
+
+nikita = Admin('nikita', 'levitskiy', '+380507093682', 0)
+
+nikita.privileges.show_privileges()
+print(nikita.describe_user())
