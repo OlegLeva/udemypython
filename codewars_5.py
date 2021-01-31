@@ -105,8 +105,12 @@
 #
 #
 # print(solve('abracadabra', 6))
+#
+# def maskify(cc):
+#     return "#"*(len(cc)-4) + cc[-4:]
+#
+# print(maskify('uulib'))
 
-def maskify(cc):
-    return "#"*(len(cc)-4) + cc[-4:]
-
-print(maskify('uulib'))
+#https://www.codewars.com/kata/55f4e56315a375c1ed000159/train/python
+def power_sumDigTerm(n):
+    pass
