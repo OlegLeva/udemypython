@@ -124,16 +124,28 @@ def separate(x):
 
 def power_sumDigTerm(n):
     res = []
-    numb = 456
-    list_numb = separate(numb)
-    print(list_numb)
-    while n >= len(res):
-        if sum(list_numb) ** len(list_numb) == numb:
+    numb = 81
+    while n > len(res):
+        list_numb = separate(numb)
+        sum_list = sum(list_numb)
+        if sum_list ** len(list_numb) == numb:
             res.append(numb)
-            print(res)
-        if len(res) == n:
-            return res[-1]
         numb += 1
+    return res[-1]
 
 
-print(power_sumDigTerm(3))
+
+print(power_sumDigTerm(4))
+
+
+def power_sumDigTerm(n):
+    power_sum = []
+    for i in range(2, 100):
+        for j in range(2, 50):
+            pow_i = i ** j
+            if sum(map(int, str(pow_i))) == i:
+                power_sum.append(pow_i)
+    power_sum.sort()
+    return power_sum[n-1]
+
+print(power_sumDigTerm(30))
