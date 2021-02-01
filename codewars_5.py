@@ -111,6 +111,29 @@
 #
 # print(maskify('uulib'))
 
-#https://www.codewars.com/kata/55f4e56315a375c1ed000159/train/python
+# https://www.codewars.com/kata/55f4e56315a375c1ed000159/train/python
+
+
+def separate(x):
+    r = [x % 10]
+    while x > 10:
+        x = int(x / 10)
+        r.insert(0, x % 10)
+    return r
+
+
 def power_sumDigTerm(n):
-    pass
+    res = []
+    numb = 456
+    list_numb = separate(numb)
+    print(list_numb)
+    while n >= len(res):
+        if sum(list_numb) ** len(list_numb) == numb:
+            res.append(numb)
+            print(res)
+        if len(res) == n:
+            return res[-1]
+        numb += 1
+
+
+print(power_sumDigTerm(3))
