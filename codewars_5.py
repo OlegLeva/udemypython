@@ -113,39 +113,83 @@
 
 # https://www.codewars.com/kata/55f4e56315a375c1ed000159/train/python
 
+#
+# def separate(x):
+#     r = [x % 10]
+#     while x > 10:
+#         x = int(x / 10)
+#         r.insert(0, x % 10)
+#     return r
+#
+#
+# def power_sumDigTerm(n):
+#     res = []
+#     numb = 81
+#     while n > len(res):
+#         list_numb = separate(numb)
+#         sum_list = sum(list_numb)
+#         if sum_list ** len(list_numb) == numb:
+#             res.append(numb)
+#         numb += 1
+#     return res[-1]
+#
+#
+#
+# print(power_sumDigTerm(4))
+#
+#
+# def power_sumDigTerm(n):
+#     power_sum = []
+#     for i in range(2, 100):
+#         for j in range(2, 50):
+#             pow_i = i ** j
+#             if sum(map(int, str(pow_i))) == i:
+#                 power_sum.append(pow_i)
+#     power_sum.sort()
+#     return power_sum[n-1]
+#
+# print(power_sumDigTerm(30))
 
-def separate(x):
-    r = [x % 10]
-    while x > 10:
-        x = int(x / 10)
-        r.insert(0, x % 10)
-    return r
+# def likes(names):
+#     if len(names) == 0:
+#         return 'no one likes this'
+#     if len(names) == 1:
+#         return f'{names[0]} likes this'
+#     if len(names) == 2:
+#         return f'{names[0]} and {names[1]} like this'
+#     if len(names) == 3:
+#         return f'{names[0]}, {names[1]} and {names[2]} like this'
+#     if len(names) > 3:
+#         return f'{names[0]}, {names[1]} and {len(names)-2} others like this'
+#
+# def printer_error(s):
+#     alfa = 'abcdefghijklmnopqrstuvwxyz'
+#     error = 0
+#     for a in s:
+#         if a not in alfa[:13]:
+#             error += 1
+#     return f'{error}/{len(s)}'
 
+def sort_array(source_array):
+    odd_list = []
+    for n in source_array:
+        if n % 2 != 0:
+            odd_list.append(n)
+    i = 0
+    j = 1
 
-def power_sumDigTerm(n):
-    res = []
-    numb = 81
-    while n > len(res):
-        list_numb = separate(numb)
-        sum_list = sum(list_numb)
-        if sum_list ** len(list_numb) == numb:
-            res.append(numb)
-        numb += 1
-    return res[-1]
+alfa = 'abcdefghijklmnopqrstuvwxyz'
+a=[1,2,3,4,5,6,7,8,9,10]
+a = list(map(lambda x: 'c' if x % 2 != 0 else x, a))
+print(a)
+even = [1,3,5,7,9]
+j = 0
+i = 0
+while i < len(a):
+    if a[i] == 'c':
+        a[i] = even[j]
+        j += 1
+    i += 1
+print(a)
 
-
-
-print(power_sumDigTerm(4))
-
-
-def power_sumDigTerm(n):
-    power_sum = []
-    for i in range(2, 100):
-        for j in range(2, 50):
-            pow_i = i ** j
-            if sum(map(int, str(pow_i))) == i:
-                power_sum.append(pow_i)
-    power_sum.sort()
-    return power_sum[n-1]
-
-print(power_sumDigTerm(30))
+# https://www.codewars.com/kata/578aa45ee9fd15ff4600090d/train/python
