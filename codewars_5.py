@@ -169,27 +169,76 @@
 #         if a not in alfa[:13]:
 #             error += 1
 #     return f'{error}/{len(s)}'
+#
+# def sort_array(source_array):
+#     odd_list = []
+#     for n in source_array:
+#         if n % 2 != 0:
+#             odd_list.append(n)
+#     a = list(map(lambda x: 'c' if x % 2 != 0 else x, source_array))
+#     odd_list.sort()
+#     i = 0
+#     j = 0
+#     while i < len(a):
+#         if a[i] == 'c':
+#             a[i] = odd_list[j]
+#             j += 1
+#         i += 1
+#     return a
+#
+# print(sort_array([9, 8, 7, 6, 5, 4, 3, 2, 1, 0]))
 
-def sort_array(source_array):
-    odd_list = []
-    for n in source_array:
-        if n % 2 != 0:
-            odd_list.append(n)
-    i = 0
-    j = 1
-
-alfa = 'abcdefghijklmnopqrstuvwxyz'
-a=[1,2,3,4,5,6,7,8,9,10]
-a = list(map(lambda x: 'c' if x % 2 != 0 else x, a))
-print(a)
-even = [1,3,5,7,9]
-j = 0
-i = 0
-while i < len(a):
-    if a[i] == 'c':
-        a[i] = even[j]
-        j += 1
-    i += 1
-print(a)
+#
+# alfa = 'abcdefghijklmnopqrstuvwxyz'
+# a=[1,2,3,4,5,6,7,8,9,10]
+# a = list(map(lambda x: 'c' if x % 2 != 0 else x, a))
+# print(a)
+# even = [1,3,5,7,9]
+# j = 0
+# i = 0
+# while i < len(a):
+#     if a[i] == 'c':
+#         a[i] = even[j]
+#         j += 1
+#     i += 1
+# print(a)
 
 # https://www.codewars.com/kata/578aa45ee9fd15ff4600090d/train/python
+#
+# def find_reverse_number(n):
+#     res = [0]
+#     for n1 in range(-1, 1000001):
+#         n11 = n1
+#         n2 = 0
+#         while n11 > 0:
+#             digit = n11 % 10
+#             n11 = n11 // 10
+#             n2 = n2 * 10
+#             n2 = n2 + digit
+#             if n2 == n1:
+#                 res.append(n1)
+#     # print(res)
+#     return res[n-1]
+#
+# print(find_reverse_number(100))
+
+#
+#
+# def find_reverse_number(n):
+#     res = [0]
+#     n1 = 1
+#     while len(res) < n:
+#         if n1 == int((str(n1))[::-1]):
+#             res.append(n1)
+#         n1 += 1
+#     return res[n-1]
+#
+# print(find_reverse_number(100))
+
+def evens_and_odds(n):
+    if n % 2 == 0:
+        return (bin(n))[2:]
+    if n % 2 != 0:
+        return (hex(n))[2:]
+
+print(evens_and_odds(13))
