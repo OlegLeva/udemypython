@@ -239,41 +239,41 @@ print(eight(plus(four())))
 #
 #
 # print(validBraces('(([{}]()))'))
+
+def validBraces_1(string):
+    brackets_open = '([{<'
+    brackets_closed = ')]}>'
+    stack = []
+    for brackets in string:
+        if brackets in brackets_open:
+            stack.append(brackets)
+        if brackets in brackets_closed:
+            if len(stack) == 0:
+                return False
+            if brackets == ')' and stack[-1] == '(':
+                stack.pop()
+            if brackets == '}' and stack[-1] == '{':
+                stack.pop()
+            if brackets == ']' and stack[-1] == '[':
+                stack.pop()
+            if brackets == '>' and stack[-1] == '<':
+                stack.pop()
+    if len(stack) == 0:
+        return True
+    else:
+        return False
+
+print(validBraces_1('(([{}]()[])'))
 #
-# def validBraces_1(string):
-#     brackets_open = '([{<'
-#     brackets_closed = ')]}>'
-#     stack = []
-#     for brackets in string:
-#         if brackets in brackets_open:
-#             stack.append(brackets)
-#         if brackets in brackets_closed:
-#             if len(stack) == 0:
-#                 return False
-#             if brackets == ')' and stack[-1] == '(':
-#                 stack.pop()
-#             if brackets == '}' and stack[-1] == '{':
-#                 stack.pop()
-#             if brackets == ']' and stack[-1] == '[':
-#                 stack.pop()
-#             if brackets == '>' and stack[-1] == '<':
-#                 stack.pop()
-#     if len(stack) == 0:
-#         return True
-#     else:
-#         return False
-#
-# print(validBraces_1('(([{}]())[])'))
-#
-# def validBraces_2(string):
-#     braces = {"(": ")", "[": "]", "{": "}"}
-#     stack = []
-#     for character in string:
-#         if character in braces.keys():
-#             stack.append(character)
-#         else:
-#             if len(stack) == 0 or braces[stack.pop()] != character:
-#                 return False
-#     return len(stack) == 0
-#
-# print(validBraces_2('((({{[]}}())))'))
+def validBraces_2(string):
+    braces = {"(": ")", "[": "]", "{": "}"}
+    stack = []
+    for character in string:
+        if character in braces.keys():
+            stack.append(character)
+        else:
+            if len(stack) == 0 or braces[stack.pop()] != character:
+                return False
+    return len(stack) == 0
+
+print(validBraces_2('((({{[]}}())))'))

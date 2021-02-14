@@ -235,10 +235,122 @@
 #
 # print(find_reverse_number(100))
 
-def evens_and_odds(n):
-    if n % 2 == 0:
-        return (bin(n))[2:]
-    if n % 2 != 0:
-        return (hex(n))[2:]
+# def evens_and_odds(n):
+#     if n % 2 == 0:
+#         return (bin(n))[2:]
+#     if n % 2 != 0:
+#         return (hex(n))[2:]
+#
+# print(evens_and_odds(13))
+#
+# def sum_of_minimums(numbers):
+#     res = 0
+#     for i in numbers:
+#         res += min(i)
+#     return res
+#
+# print(sum_of_minimums([ [ 7,9,8,6,2 ], [6,3,5,4,3], [5,8,7,4,5] ]))
+#
+# def sum_of_minimums(numbers):
+#     res = 0
+#     return [min(i) for i in numbers]
+#
+# print(sum_of_minimums([ [ 7,9,8,6,2 ], [6,3,5,4,3], [5,8,7,4,5] ]))
 
-print(evens_and_odds(13))
+# def fake_bin(x):
+#     y = ''
+#     for i in x:
+#         if int(i) < 5:
+#             y += '0'
+#         if int(i) >= 5:
+#             y += '1'
+#     return y
+#
+# print(fake_bin("366058562030849490134388085"))
+
+# def summy(string_of_ints):
+#     sum_of_ints = sum(map(int, string_of_ints.split()))
+#
+#     return sum_of_ints
+#
+# print(summy('55 3 5'))
+#
+# def comp(array1, array2):
+#     if sorted([x*x for x in array1]) == sorted(array2):
+#         return True
+#     else:
+#         return False
+#
+#
+#
+#
+#
+#
+# a = [121, 144, 19, 161, 19, 144, 19, 11]
+# b = [121, 1464, 20736, 361, 25921, 361, 20736, 361]
+# print(comp(a, b))
+
+# alphabet = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
+# print(set('abcdef') - set('abcdf'))
+
+# def find_missing_letter(chars):
+#     chars.sort()
+#     alphabet = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
+#     index_start = alphabet.index(chars[0])
+#     index_end = alphabet.index(chars[-1])
+#     chars_1 = alphabet[index_start: index_end + 1]
+#     return (set(chars_1) - set(chars)).pop()
+#
+# print(find_missing_letter(["O","Q","R","S"]))
+
+def check_empty_list(l):
+    for i in l:
+        if i == []:
+            l.remove(i)
+    return l
+
+def snail(snail_map):
+    res = []
+
+    while snail_map:
+        while snail_map[0]:
+            res.append((snail_map[0].pop(0)))
+        check_empty_list(snail_map)
+        if not snail_map:
+            break
+
+        for i in snail_map:
+            res.append(i.pop(-1))
+        check_empty_list(snail_map)
+        if not snail_map:
+            break
+
+        while snail_map[-1]:
+            res.append((snail_map[-1].pop(-1)))
+        check_empty_list(snail_map)
+        if not snail_map:
+            break
+
+        for i in snail_map[::-1]:
+            print(i)
+            res.append(i.pop(0))
+        check_empty_list(snail_map)
+        if not snail_map:
+            break
+
+
+    return res
+
+
+print(snail([[1,2,3,4,5,6],
+             [20,21,22,23,24,7],
+             [19,32,33,34,25,8],
+             [18,31,36,35,26,9],
+             [17,30,29,28,27,10],
+             [16,15,14,13,12,11]]))
+# https://www.codewars.com/kata/56a5d994ac971f1ac500003e/train/python
+
+
+
+
+
