@@ -302,55 +302,113 @@
 #     return (set(chars_1) - set(chars)).pop()
 #
 # print(find_missing_letter(["O","Q","R","S"]))
+#
+# def check_empty_list(l):
+#     for i in l:
+#         if i == []:
+#             l.remove(i)
+#     return l
+#
+# def snail(snail_map):
+#     res = []
+#
+#     while snail_map:
+#         while snail_map[0]:
+#             res.append((snail_map[0].pop(0)))
+#         check_empty_list(snail_map)
+#         if not snail_map:
+#             break
+#
+#         for i in snail_map:
+#             res.append(i.pop(-1))
+#         check_empty_list(snail_map)
+#         if not snail_map:
+#             break
+#
+#         while snail_map[-1]:
+#             res.append((snail_map[-1].pop(-1)))
+#         check_empty_list(snail_map)
+#         if not snail_map:
+#             break
+#
+#         for i in snail_map[::-1]:
+#             print(i)
+#             res.append(i.pop(0))
+#         check_empty_list(snail_map)
+#         if not snail_map:
+#             break
+#
+#
+#     return res
+#
+#
+# print(snail([[1,2,3,4,5,6],
+#              [20,21,22,23,24,7],
+#              [19,32,33,34,25,8],
+#              [18,31,36,35,26,9],
+#              [17,30,29,28,27,10],
+#              [16,15,14,13,12,11]]))
+# https://www.codewars.com/kata/56a5d994ac971f1ac500003e/train/python
+#
+# def digital_root(n):
+#     while n >= 10:
+#         n = sum(map(int, (str(n))))
+#         print(n)
+#     return n
+#
+#
+#
+#
+# print(digital_root(132189))
+#   -->  1 + 3 + 2 + 1 + 8 + 9 = 24  -->  2 + 4 = 6
 
-def check_empty_list(l):
-    for i in l:
-        if i == []:
-            l.remove(i)
-    return l
+# def persistence(n):
+#     while n >= 10:
+#         n = eval('*'.join(str(n)))
+#     return n
+#
+# print(persistence(25))
 
-def snail(snail_map):
+# def points(games):
+#     count = 0
+#     for i in games:
+#         if i[0] > i[2]:
+#             count += 3
+#         if i[0] == i[2]:
+#             count += 1
+#     return count
+#
+# print(points(['1:0','2:0','3:0','4:0','2:1','1:3','1:4','2:3','2:4','3:4']))
+
+# def reverse_words(s):
+#     return ' '.join((s.split())[::-1])
+#
+# print(reverse_words("The greatest victory is that which requires no battle"))
+#
+# def reverse_words(text):
+#     res = []
+#     for w in text.split():
+#         x = w[::-1]
+#         res.append(x)
+#     return ' '.join(res)
+#
+#
+# print(reverse_words("This is an example!"))
+
+def in_array(array1, array2):
     res = []
-
-    while snail_map:
-        while snail_map[0]:
-            res.append((snail_map[0].pop(0)))
-        check_empty_list(snail_map)
-        if not snail_map:
-            break
-
-        for i in snail_map:
-            res.append(i.pop(-1))
-        check_empty_list(snail_map)
-        if not snail_map:
-            break
-
-        while snail_map[-1]:
-            res.append((snail_map[-1].pop(-1)))
-        check_empty_list(snail_map)
-        if not snail_map:
-            break
-
-        for i in snail_map[::-1]:
-            print(i)
-            res.append(i.pop(0))
-        check_empty_list(snail_map)
-        if not snail_map:
-            break
-
-
+    for i in a1:
+        for j in a2:
+            if i in j and i not in res:
+                res.append(i)
+    res.sort()
     return res
 
 
-print(snail([[1,2,3,4,5,6],
-             [20,21,22,23,24,7],
-             [19,32,33,34,25,8],
-             [18,31,36,35,26,9],
-             [17,30,29,28,27,10],
-             [16,15,14,13,12,11]]))
-# https://www.codewars.com/kata/56a5d994ac971f1ac500003e/train/python
 
+a1 = ["arp", "live", "strong"]
 
+a2 = ["lively", "alive", "harp", "sharp", "armstrong"]
 
-
+print(in_array(a1, a2))
 
