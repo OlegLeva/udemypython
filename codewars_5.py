@@ -395,20 +395,56 @@
 #
 # print(reverse_words("This is an example!"))
 
-def in_array(array1, array2):
+# def in_array(array1, array2):
+#     res = []
+#     for i in a1:
+#         for j in a2:
+#             if i in j and i not in res:
+#                 res.append(i)
+#     res.sort()
+#     return res
+#
+#
+#
+# a1 = ["arp", "live", "strong"]
+#
+# a2 = ["lively", "alive", "harp", "sharp", "armstrong"]
+#
+# print(in_array(a1, a2))
+
+# def friend(x):
+#     return [n for n in x if len(n) == 4]
+#
+# print(friend(["Jimm", "Cari", "aret", "truehdnviegkwgvke", "sixtyiscooooool"]))
+
+# def find_short(s):
+#     return min([len(x) for x in s.split()])
+# print(find_short("lets talk about javascript the best language"))
+
+# def prefill(n, v='undefined'):
+#     l = []
+#     if n == 0:
+#         return []
+#     if type(n) != int:
+#         raise TypeError('{} is invalid'.format(n))
+#     else:
+#         l.append(v)
+#         return l*n
+#
+# print(prefill('xyz', prefill(3, 'aa')))
+
+def tower_builder(n_floors):
     res = []
-    for i in a1:
-        for j in a2:
-            if i in j and i not in res:
-                res.append(i)
-    res.sort()
+    z = "*"
+    size = n_floors*2-1
+    count = 1
+    while count <= n_floors:
+        s = "{:^"f"{size}""}".format(z)
+        res.append(s)
+        z += "**"
+        count += 1
     return res
 
 
 
-a1 = ["arp", "live", "strong"]
-
-a2 = ["lively", "alive", "harp", "sharp", "armstrong"]
-
-print(in_array(a1, a2))
-
+print(tower_builder(6))
