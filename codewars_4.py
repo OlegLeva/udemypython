@@ -77,13 +77,18 @@
 #         i += 1
 #     return sum(result)
 
-def remove_smallest(numbers):
-    if numbers == []:
-        return []
-    new_numbers = numbers[:]
-    new_numbers.remove(min(numbers))
-    return new_numbers
+# def remove_smallest(numbers):
+#     if numbers == []:
+#         return []
+#     new_numbers = numbers[:]
+#     new_numbers.remove(min(numbers))
+#     return new_numbers
+#
+# print(remove_smallest([5, 3, 2, 1, 4]))
 
-print(remove_smallest([5, 3, 2, 1, 4]))
+n = 4
+a = [[0] * n for i in range(n)]
+for i in range(0, 0):
+    print(i)
 
 

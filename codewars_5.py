@@ -432,19 +432,51 @@
 #         return l*n
 #
 # print(prefill('xyz', prefill(3, 'aa')))
+#
+# def tower_builder(n_floors):
+#     res = []
+#     z = "*"
+#     size = n_floors*2-1
+#     count = 1
+#     while count <= n_floors:
+#         s = "{:^"f"{size}""}".format(z)
+#         res.append(s)
+#         z += "**"
+#         count += 1
+#     return res
+#
+# strarr = ["tree", "foling", "trashy", "blue", "abcdef", "uvwxyz"]
+#
+#
+# def factorial(n):
+#     x = 1
+#     y = 2
+#     while y <= n:
+#         x *= y
+#         y += 1
+#     return x
+#
+# print(factorial(3))
+#
+#
+# print(tower_builder(6))
+#
+# from heapq import nsmallest
+# def first_n_smallest(arr, n):
+#     return [arr.pop(i) for i in list(map(arr.index, nsmallest(n, arr)))]
+#
+# print(first_n_smallest([1,2,3,4,5], 3))
 
-def tower_builder(n_floors):
-    res = []
-    z = "*"
-    size = n_floors*2-1
-    count = 1
-    while count <= n_floors:
-        s = "{:^"f"{size}""}".format(z)
-        res.append(s)
-        z += "**"
-        count += 1
-    return res
+n = 4
+a = [[0] * n for i in range(n)]
+for i in range(n):
+    for j in range(0, i):
+        a[i][j] = 2
+    a[i][i] = 1
+    for j in range(i + 1, n):
+        a[i][j] = 0
+for row in a:
+    print(' '.join([str(elem) for elem in row]))
 
+# https://www.codewars.com/kata/52bb6539a4cf1b12d90005b7/train/python
 
-
-print(tower_builder(6))
