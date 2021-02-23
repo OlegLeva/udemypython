@@ -467,15 +467,10 @@
 #
 # print(first_n_smallest([1,2,3,4,5], 3))
 
-ff = [0,0,0,0]
-for f in ff:
-    ff
-print(ff)
-
 
 n = 8
 ii = 2
-jj = 4
+jj = 5
 i = ii
 j = jj
 a = [[1] * n for _ in range(n)]
@@ -491,14 +486,14 @@ if a[i][j] == 0:
             a[i][j] = 0
             i += 1
             j += 1
-        i = ii
-        j = jj
-        j += i
-        i = 0
-        while j >= 0:
-            a[i][j] = 0
-            i += 1
-            j -= 1
+        # i = ii
+        # j = jj
+        # j += i
+        # i = 0
+        # while j >= 0:
+        #     a[i][j] = 0
+        #     i += 1
+        #     j -= 1
 
     if i < j:
 
@@ -517,14 +512,6 @@ if a[i][j] == 0:
             i += 1
             j -= 1
 
-
-
-# for i in range(n):
-#     for j in range(0, i):
-#         a[i][j] = 2
-#     a[i][i] = 1
-#     for j in range(i + 1, n):
-#         a[i][j] = 0
 for row in a:
      print(' '.join([str(elem) for elem in row]))
 
