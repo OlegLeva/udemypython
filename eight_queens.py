@@ -19,8 +19,15 @@ def count_queens(numb, lett):
                 a[i][j] = 0
                 i += 1
                 j += 1
-
-        if i < j:
+            i = ii
+            j = jj
+            j += i
+            i = 0
+            while j >= 0:
+                a[i][j] = 0
+                i += 1
+                j -= 1
+        if i <= j:
             j -= i
             i = 0
             while j < n:
@@ -29,9 +36,9 @@ def count_queens(numb, lett):
                 j += 1
             i = ii
             j = jj
-            j += i
-            i = 0
-            while j != 0:
+            i = i - (7 - j)
+            j = 7
+            while i < n:
                 a[i][j] = 0
                 i += 1
                 j -= 1
@@ -39,4 +46,4 @@ def count_queens(numb, lett):
     for row in a:
         print(' '.join([str(elem) for elem in row]))
 
-print(count_queens(4, 'h'))
+print(count_queens(1, 'b'))

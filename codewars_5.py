@@ -469,8 +469,8 @@
 
 
 n = 8
-ii = 2
-jj = 5
+ii = 6
+jj = 3
 i = ii
 j = jj
 a = [[1] * n for _ in range(n)]
@@ -486,16 +486,16 @@ if a[i][j] == 0:
             a[i][j] = 0
             i += 1
             j += 1
-        # i = ii
-        # j = jj
-        # j += i
-        # i = 0
-        # while j >= 0:
-        #     a[i][j] = 0
-        #     i += 1
-        #     j -= 1
+        i = ii
+        j = jj
+        i = j - (7 - i)
+        j = 7
+        while j >= 0:
+            a[i][j] = 0 ####
+            i += 1
+            j -= 1
 
-    if i < j:
+    if i <= j:
 
         j -= i
         i = 0
@@ -505,9 +505,9 @@ if a[i][j] == 0:
             j += 1
         i = ii
         j = jj
-        j += i
-        i = 0
-        while j != 0:
+        i = i - (7-j)
+        j = 7
+        while i < n:
             a[i][j] = 0
             i += 1
             j -= 1
