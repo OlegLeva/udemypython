@@ -468,53 +468,74 @@
 # print(first_n_smallest([1,2,3,4,5], 3))
 
 
-n = 8
-ii = 6
-jj = 3
-i = ii
-j = jj
-a = [[1] * n for _ in range(n)]
-a[i][j] = 0
-if a[i][j] == 0:
-    a[i] = [c*0 for c in range(0, n)]
-    for l in range(0, n):
-        a[l][j] = 0
-    if i > j:
-        i -= j
-        j = 0
-        while i < n:
-            a[i][j] = 0
-            i += 1
-            j += 1
-        i = ii
-        j = jj
-        i = j - (7 - i)
-        j = 7
-        while j >= 0:
-            a[i][j] = 0 ####
-            i += 1
-            j -= 1
-
-    if i <= j:
-
-        j -= i
-        i = 0
-        while j < n:
-            a[i][j] = 0
-            i += 1
-            j += 1
-        i = ii
-        j = jj
-        i = i - (7-j)
-        j = 7
-        while i < n:
-            a[i][j] = 0
-            i += 1
-            j -= 1
-
-for row in a:
-     print(' '.join([str(elem) for elem in row]))
+# n = 8
+# ii = 3
+# jj = 3
+# i = ii
+# j = jj
+# a = [[1] * n for _ in range(n)]
+# a[i][j] = 0
+# if a[i][j] == 0:
+#     a[i] = [c*0 for c in range(0, n)]
+#     for l in range(0, n):
+#         a[l][j] = 0
+#     if i > j:
+#         i -= j
+#         j = 0
+#         while i < n:
+#             a[i][j] = 0
+#             i += 1
+#             j += 1
+#         i = ii
+#         j = jj
+#         i = j - (7 - i)
+#         j = 7
+#         while j >= 0:
+#             a[i][j] = 0 ####
+#             i += 1
+#             j -= 1
+#
+#     if i <= j:
+#
+#         j -= i
+#         i = 0
+#         while j < n:
+#             a[i][j] = 0
+#             i += 1
+#             j += 1
+#         i = ii
+#         j = jj
+#         i = i - (7-j)
+#         j = 7
+#         while i < n:
+#             a[i][j] = 0
+#             i += 1
+#             j -= 1
+#
+# for row in a:
+#      print(' '.join([str(elem) for elem in row]))
 
 # https://www.codewars.com/kata/52bb6539a4cf1b12d90005b7/train/python
 # https://pythontutor.ru/lessons/2d_arrays/
+
+
+n = int(input())
+m = int(input())
+a = []
+for i in range(8):
+    b = []
+    for j in range(8):
+        if i == n-1 and j == m-1:
+            b.append("Q")
+        elif i != n-1 and j == m-1:
+            b.append("*")
+        elif i == n-1 and j != m-1:
+            b.append("*")
+        elif abs(i-n+1) == abs(j-m+1):
+            b.append("*")
+        else:
+            b.append(".")
+    a.append(b)
+for i in range(len(a)):
+    print(*a[i])
 
