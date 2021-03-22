@@ -20,13 +20,13 @@ def queen_move(numb, lett):
     move(n, m, a)
     count = 1
 
-    for i in a:
-        for j in i:
-            if j == '.':
-                move(a.index(i), i.index(j), a)
-                count += 1
-    if count != 8:
-        pass ####
+    # for i in a:
+    #     for j in i:
+    #         if j == '.':
+    #             move(a.index(i), i.index(j), a)
+    #             count += 1
+    # if count != 8:
+    #     pass ####
 
 
     for row in a:
