@@ -518,24 +518,39 @@
 # https://www.codewars.com/kata/52bb6539a4cf1b12d90005b7/train/python
 # https://pythontutor.ru/lessons/2d_arrays/
 
+#
+# def stray(arr):
+#     for i in arr:
+#         if arr.count(i) == 1:
+#             return i
+#
+# print(stray([17, 17, 3, 17, 17, 17, 17]))
+#
+# def count_bits(n):
+#
+#
+#
+#     return ''.join(bin(n)).count('1')
+#
+# print(count_bits(1234))
+#
+# recipe = {"flour": 500, "sugar": 200, "eggs": 1}
+# available = {"flour": 1200, "sugar": 1200, "eggs": 5, "milk": 200}
+#
+# def cakes(recipe, available):
+#     res = []
+#     for i in recipe:
+#         if not i in available:
+#             return 0
+#         else:
+#             res.append(available[i] / recipe[i])
+#     return int(min(res))
+#
+# print(cakes(recipe, available))
 
-n = int(input())
-m = int(input())
-a = []
-for i in range(8):
-    b = []
-    for j in range(8):
-        if i == n-1 and j == m-1:
-            b.append("Q")
-        elif i != n-1 and j == m-1:
-            b.append("*")
-        elif i == n-1 and j != m-1:
-            b.append("*")
-        elif abs(i-n+1) == abs(j-m+1):
-            b.append("*")
-        else:
-            b.append(".")
-    a.append(b)
-for i in range(len(a)):
-    print(*a[i])
+def sum_two_smallest_numbers(numbers):
+    x = numbers.pop(numbers.index(min(numbers)))
+    y = numbers.pop(numbers.index(min(numbers)))
+    return x + y
 
+print(sum_two_smallest_numbers([5, 8, 12, 18, 22]))
