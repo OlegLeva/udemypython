@@ -124,29 +124,69 @@
 #
 #
 # namelist(s)
-def decodeMorse(morse_code):
-    code = {'A': '.-',     'B': '-...',   'C': '-.-.',
-            'D': '-..',    'E': '.',      'F': '..-.',
-            'G': '--.',    'H': '....',   'I': '..',
-            'J': '.---',   'K': '-.-',    'L': '.-..',
-            'M': '--',     'N': '-.',     'O': '---',
-            'P': '.--.',   'Q': '--.-',   'R': '.-.',
-            'S': '...',    'T': '-',      'U': '..-',
-            'V': '...-',   'W': '.--',    'X': '-..-',
-            'Y': '-.--',   'Z': '--..', '0': '-----',
-            '1': '.----',  '2': '..---',
-            '3': '...--',  '4': '....-',  '5': '.....',
-            '6': '-....',  '7': '--...',  '8': '---..',
-            '9': '----.'
-            }
-    morze_reverce = {v: k for k, v in code.items()}
-    res = []
-    res_2 = ''
-    for i in morse_code.split('  '):
-        for j in i.split():
-            res_2 += morze_reverce[j]
-        res.append(res_2)
-        res_2 = ''
-    return ' '.join(res)
+# def decodeMorse(morse_code):
+#     code = {'A': '.-',     'B': '-...',   'C': '-.-.',
+#             'D': '-..',    'E': '.',      'F': '..-.',
+#             'G': '--.',    'H': '....',   'I': '..',
+#             'J': '.---',   'K': '-.-',    'L': '.-..',
+#             'M': '--',     'N': '-.',     'O': '---',
+#             'P': '.--.',   'Q': '--.-',   'R': '.-.',
+#             'S': '...',    'T': '-',      'U': '..-',
+#             'V': '...-',   'W': '.--',    'X': '-..-',
+#             'Y': '-.--',   'Z': '--..', '0': '-----',
+#             '1': '.----',  '2': '..---',
+#             '3': '...--',  '4': '....-',  '5': '.....',
+#             '6': '-....',  '7': '--...',  '8': '---..',
+#             '9': '----.'
+#             }
+#     morze_reverce = {v: k for k, v in code.items()}
+#     res = []
+#     res_2 = ''
+#     for i in morse_code.split('  '):
+#         for j in i.split():
+#             res_2 += morze_reverce[j]
+#         res.append(res_2)
+#         res_2 = ''
+#     return ' '.join(res)
+#
+# print(decodeMorse('.... . -.--   .--- ..- -.. .'))
 
-print(decodeMorse('.... . -.--   .--- ..- -.. .'))
+# def order(sentence):
+#     # if not sentence:
+#     #     return ""
+#     my_dict = {}
+#     list_numb = []
+#     list_res = []
+#     for word in sentence.split():
+#         for s in word:
+#             if s.isdigit():
+#                 my_dict[s] = word
+#                 list_numb.append(s)
+#     list_numb.sort()
+#     for w in list_numb:
+#         list_res.append(my_dict[w])
+#     return ' '.join(list_res)
+#
+#
+#
+#
+# print(order(""))
+
+# def scramble(s1, s2):
+#     for i in set(s2):
+#         if s2.count(i) > s1.count(i):
+#             return False
+#     return True
+#
+# print(scramble('rkqowdl', 'world'))
+
+#https://www.codewars.com/kata/530e15517bc88ac656000716/train/python
+alpha_up = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+alpha_down = 'abcdefghijklmnopqrstuvwxyz'
+print(alpha_up.index('S'))
+print(alpha_up.index('F'))
+
+
+import string
+def rot13(message):
+    alpha_up = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
