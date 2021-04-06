@@ -179,39 +179,51 @@
 #     return True
 #
 # print(scramble('rkqowdl', 'world'))
+#
+# https://www.codewars.com/kata/530e15517bc88ac656000716/train/python
+# alpha_up = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+# alpha_down = 'abcdefghijklmnopqrstuvwxyz'
+# print(alpha_up.index('S'))
+# print(alpha_up.index('F'))
+#
+#
+# import string
+# def rot13(message):
+#     alpha_up = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+#     alpha_down = 'abcdefghijklmnopqrstuvwxyz'
+#     res = ''
+#     for i in message:
+#         if i in alpha_up:
+#             x = alpha_up.index(i)
+#             if x < 13:
+#                 res += alpha_up[x+13]
+#             if x == 13:
+#                 res += alpha_up[0]
+#             if x > 13:
+#                 res += alpha_up[x + 13 - len(alpha_up)]
+#
+#         if i in alpha_down:
+#             x = alpha_down.index(i)
+#             if x < 13:
+#                 res += alpha_down[x+13]
+#             if x == 13:
+#                 res += alpha_down[0]
+#             if x > 13:
+#                 res += alpha_down[x + 13 - len(alpha_down)]
+#     return res
+#
+#
+#
+# print(rot13('ABCDEFGHIJKLMNOPQRSTUVWXYZ'))
 
-#https://www.codewars.com/kata/530e15517bc88ac656000716/train/python
-alpha_up = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
-alpha_down = 'abcdefghijklmnopqrstuvwxyz'
-print(alpha_up.index('S'))
-print(alpha_up.index('F'))
+def spin_words(sentence):
+    res = []
+    for i in sentence.split():
+        if len(i) > 4:
+            res.append((i[::-1]))
+        else:
+            res.append(i)
+    return ' '.join(res)
 
 
-import string
-def rot13(message):
-    alpha_up = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
-    alpha_down = 'abcdefghijklmnopqrstuvwxyz'
-    res = ''
-    for i in message:
-        if i in alpha_up:
-            x = alpha_up.index(i)
-            if x < 14:
-                res += alpha_up[x+13]
-            if x == 13:
-                res += alpha_up[0]
-            if x > 14:
-                res += alpha_up[x + 13 - len(alpha_up)]
-
-        if i in alpha_down:
-            x = alpha_down.index(i)
-            if x < 14:
-                res += alpha_down[x+13]
-            if x == 13:
-                res += alpha_down[0]
-            if x > 14:
-                res += alpha_down[x + 13 - len(alpha_down)]
-    return res
-
-
-
-print(rot13('TestRdddUUKfdh'))
+print(spin_words("Hey fellow warriors"))
